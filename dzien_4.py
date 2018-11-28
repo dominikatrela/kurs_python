@@ -32,3 +32,23 @@ def wyswietl_slownik(slownik, miasta):
 
 
 wyswietl_slownik(slownik, miasta)
+
+# plik = open('dane22', 'w+')
+# plik.write('M')
+# print(plik.readline())
+# plik.close()
+
+
+with open('dane22', 'r+') as plik:
+    licznik = int(plik.readline())
+    licznik = licznik + 1
+    print(licznik)
+    plik.seek(0)
+    plik.write(str(licznik))
+    plik.close()
+
+imie = input("podaj imie:")
+nazwisko = input('podaj nazwisko:')
+with open('dziennik', 'a+') as plik:
+    plik.write('\n' + imie +' '+ nazwisko )
+    print(plik.readline())
